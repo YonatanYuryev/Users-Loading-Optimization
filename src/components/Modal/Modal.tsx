@@ -1,6 +1,14 @@
 import { FC } from "react";
 import styles from "./Modal.module.scss";
 import Close from "./Close";
+import Name from "./Name";
+import Avatar from "./Avatar";
+import Email from "./Email";
+import Phone from "./Phone";
+import Gender from "./Gender";
+import Nationality from "./Nationality";
+import City from "./City";
+import Birth from "./Birth";
 
 type Props = {};
 
@@ -11,20 +19,17 @@ const Modal: FC = (props: Props) => {
         <Close />
         <section className={styles.user}>
           <div className={styles.topSection}>
-            <img
-              src="https://randomuser.me/api/portraits/men/75.jpg"
-              className={styles.avatar}
-              alt="user"
-            />
-            <div className={styles.name}>New York</div>
+            <Avatar />
+            <Name />
           </div>
 
           <div className={styles.bottomSection}>
-            <div className={styles.email}></div>
-            <div className={styles.phone}></div>
-            <div className={styles.gender}></div>
-            <div className={styles.nationality}></div>
-            <div className={styles.birth}></div>
+            <Email />
+            <Phone />
+            <Gender />
+            <Nationality />
+            <City />
+            <Birth />
           </div>
         </section>
       </div>
