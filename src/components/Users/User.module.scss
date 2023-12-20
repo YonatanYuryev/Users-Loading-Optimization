@@ -2,9 +2,16 @@
   height: 550px;
   display: flex;
   flex-direction: column;
+  gap: 5px;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: transparent;
   margin-bottom: 10px;
+
+  scroll-behavior: smooth;
+}
+
+.list::-webkit-scrollbar {
+  width: 0;
 }
 
 .user {

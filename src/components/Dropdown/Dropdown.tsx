@@ -7,6 +7,7 @@ type Props = {
   onClickDropdownItem: (el: string) => void;
   isOpen: boolean;
   setOpen: () => void;
+  nat: string;
 };
 
 const Dropdown: FC<Props> = ({
@@ -14,12 +15,13 @@ const Dropdown: FC<Props> = ({
   onClickDropdownItem,
   isOpen,
   setOpen,
+  nat,
 }) => {
   return (
     <div className={styles.dropdown}>
       <div onClick={setOpen} className={styles.default}>
-        <p>Nationality</p>
-        <Caret isOpen={true} />
+        {nat === "" ? <p>Nationality</p> : <p>{nat}</p>}
+        <Caret isOpen={isOpen} />
       </div>
       {isOpen && (
         <ul className={styles.list}>
