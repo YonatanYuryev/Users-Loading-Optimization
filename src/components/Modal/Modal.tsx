@@ -9,27 +9,31 @@ import Gender from "./Gender";
 import Nationality from "./Nationality";
 import City from "./City";
 import Birth from "./Birth";
+import { IUser } from "../../interface/user.interface";
 
-type Props = {};
+type Props = {
+  user: IUser;
+  onCloseModal: () => void;
+};
 
-const Modal: FC = (props: Props) => {
+const Modal: FC<Props> = ({ user, onCloseModal }) => {
   return (
     <div className={styles.bg}>
       <div className={styles.modal}>
-        <Close />
+        <Close onCloseModal={onCloseModal} />
         <section className={styles.user}>
           <div className={styles.topSection}>
-            <Avatar />
-            <Name />
+            <Avatar url={user.picture.large} />
+            <Name name={user.name.first} />
           </div>
 
           <div className={styles.bottomSection}>
-            <Email />
-            <Phone />
-            <Gender />
-            <Nationality />
-            <City />
-            <Birth />
+            <Email email={user.email} />
+            <Phone phone={user.phone} />
+            <Gender gender={user.gender} />
+            <Nationality nationality={user.nat} />
+            <City city={user.location.city} />
+            <Birth birth={user.dob.date} />
           </div>
         </section>
       </div>

@@ -6,10 +6,10 @@ import styles from "./Controls.module.scss";
 type Props = {
   setNat: (el: string) => void;
   nat: string;
-  onClickFilters: () => void;
+  onClickFilter: () => void;
 };
 
-const Controls: FC<Props> = ({ setNat, nat, onClickFilters }) => {
+const Controls: FC<Props> = ({ setNat, nat, onClickFilter }) => {
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const nations: string[] = [
     "Clear",
@@ -47,7 +47,7 @@ const Controls: FC<Props> = ({ setNat, nat, onClickFilters }) => {
         isOpen={openDropdown}
         setOpen={onClickDropdown}
       />
-      <Button onClick={onClickFilters}>Filters</Button>
+      <Button onClick={onClickFilter}>Filter</Button>
     </div>
   );
 };

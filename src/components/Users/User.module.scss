@@ -1,4 +1,5 @@
-.list {
+.list,
+.loadingList {
   height: 550px;
   display: flex;
   flex-direction: column;
@@ -10,7 +11,14 @@
   scroll-behavior: smooth;
 }
 
-.list::-webkit-scrollbar {
+.loadingList {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.list::-webkit-scrollbar,
+.loadingList::-webkit-scrollbar {
   width: 0;
 }
 

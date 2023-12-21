@@ -5,11 +5,12 @@ import { IUser } from "../../interface/user.interface";
 type Props = {
   user: IUser;
   key: React.Key;
+  onClickUser: (idValue: string | number) => void;
 };
 
-const User: FC<Props> = ({ user }) => {
+const User: FC<Props> = ({ user, onClickUser }) => {
   return (
-    <div className={styles.user}>
+    <div className={styles.user} onClick={() => onClickUser(user.id.value)}>
       <img className={styles.avatar} src={user.picture.large} alt="user" />
       <div className={styles.name}>
         <p className={styles.text}>{user.name.first}</p>

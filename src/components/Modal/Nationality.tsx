@@ -1,13 +1,15 @@
 import { FC } from "react";
 import styles from "./Modal.module.scss";
 
-type Props = {};
+type Props = {
+  nationality: string;
+};
 
-const Nationality: FC = (props: Props) => {
+const Nationality: FC<Props> = ({nationality}) => {
   return (
     <div className={styles.nationality}>
       <span className={styles.label}>Nationality:</span>
-      <span className={styles.value}>US</span>
+      <span className={styles.value}>{nationality}</span>
     </div>
   );
 };

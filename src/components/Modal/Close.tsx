@@ -1,11 +1,14 @@
 import { FC } from "react";
 import styles from "./Modal.module.scss";
 
-type Props = {};
+type Props = {
+  onCloseModal: () => void;
+};
 
-const Close: FC = (props: Props) => {
+const Close: FC<Props> = ({ onCloseModal }) => {
   return (
     <svg
+      onClick={onCloseModal}
       xmlns="http://www.w3.org/2000/svg"
       width="30"
       height="30"

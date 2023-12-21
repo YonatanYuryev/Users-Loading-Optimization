@@ -1,13 +1,15 @@
 import { FC } from "react";
 import styles from "./Modal.module.scss";
 
-type Props = {};
+type Props = {
+  gender: string;
+};
 
-const Gender: FC = (props: Props) => {
+const Gender: FC<Props> = ({ gender }) => {
   return (
     <div className={styles.gender}>
       <span className={styles.label}>Gender:</span>
-      <span className={styles.value}>Male</span>
+      <span className={styles.value}>{gender}</span>
     </div>
   );
 };

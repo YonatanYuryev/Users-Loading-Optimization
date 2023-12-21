@@ -1,13 +1,15 @@
 import { FC } from "react";
 import styles from "./Modal.module.scss";
 
-type Props = {};
+type Props = {
+  phone: string | number;
+};
 
-const Phone: FC = (props: Props) => {
+const Phone: FC<Props> = ({ phone }) => {
   return (
     <div className={styles.phone}>
       <span className={styles.label}>Phone:</span>
-      <span className={styles.value}>(272) 790-0888</span>
+      <span className={styles.value}>{phone}</span>
     </div>
   );
 };

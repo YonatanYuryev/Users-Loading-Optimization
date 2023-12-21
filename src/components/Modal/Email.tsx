@@ -1,13 +1,15 @@
 import { FC } from "react";
 import styles from "./Modal.module.scss";
 
-type Props = {};
+type Props = {
+  email: string;
+};
 
-const Email: FC = (props: Props) => {
+const Email: FC<Props> = ({ email }) => {
   return (
     <div className={styles.email}>
       <span className={styles.label}>Email:</span>
-      <span className={styles.value}>jennie.nichols@example.com</span>
+      <span className={styles.value}>{email}</span>
     </div>
   );
 };
